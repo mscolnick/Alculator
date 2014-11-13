@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F371AFDD1A14A058007014B2 /* ModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371AFDC1A14A058007014B2 /* ModelViewController.swift */; };
+		F371AFDF1A14ADBA007014B2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371AFDE1A14ADBA007014B2 /* DataManager.swift */; };
+		F371AFE11A14B6E0007014B2 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371AFE01A14B6E0007014B2 /* CSV.swift */; };
+		F371AFE31A14B8DF007014B2 /* abv.csv in Resources */ = {isa = PBXBuildFile; fileRef = F371AFE21A14B8DF007014B2 /* abv.csv */; };
 		F3E2386E1A060A6E0081668E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2386D1A060A6E0081668E /* AppDelegate.swift */; };
 		F3E238701A060A6E0081668E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2386F1A060A6E0081668E /* ViewController.swift */; };
 		F3E238731A060A6E0081668E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3E238711A060A6E0081668E /* Main.storyboard */; };
@@ -26,6 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F371AFDC1A14A058007014B2 /* ModelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelViewController.swift; sourceTree = "<group>"; };
+		F371AFDE1A14ADBA007014B2 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		F371AFE01A14B6E0007014B2 /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
+		F371AFE21A14B8DF007014B2 /* abv.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = abv.csv; sourceTree = "<group>"; };
 		F3E238681A060A6E0081668E /* Alculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E2386C1A060A6E0081668E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3E2386D1A060A6E0081668E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +87,9 @@
 			children = (
 				F3E2386D1A060A6E0081668E /* AppDelegate.swift */,
 				F3E2386F1A060A6E0081668E /* ViewController.swift */,
+				F371AFDE1A14ADBA007014B2 /* DataManager.swift */,
+				F371AFE01A14B6E0007014B2 /* CSV.swift */,
+				F371AFDC1A14A058007014B2 /* ModelViewController.swift */,
 				F3E238711A060A6E0081668E /* Main.storyboard */,
 				F3E238741A060A6E0081668E /* Images.xcassets */,
 				F3E238761A060A6E0081668E /* LaunchScreen.xib */,
@@ -90,6 +101,7 @@
 		F3E2386B1A060A6E0081668E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F371AFE21A14B8DF007014B2 /* abv.csv */,
 				F3E2386C1A060A6E0081668E /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -194,6 +206,7 @@
 			files = (
 				F3E238731A060A6E0081668E /* Main.storyboard in Resources */,
 				F3E238781A060A6E0081668E /* LaunchScreen.xib in Resources */,
+				F371AFE31A14B8DF007014B2 /* abv.csv in Resources */,
 				F3E238751A060A6E0081668E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,7 +226,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3E238701A060A6E0081668E /* ViewController.swift in Sources */,
+				F371AFDF1A14ADBA007014B2 /* DataManager.swift in Sources */,
+				F371AFE11A14B6E0007014B2 /* CSV.swift in Sources */,
 				F3E2386E1A060A6E0081668E /* AppDelegate.swift in Sources */,
+				F371AFDD1A14A058007014B2 /* ModelViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +423,7 @@
 				F3E238891A060A6F0081668E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F3E2388A1A060A6F0081668E /* Build configuration list for PBXNativeTarget "AlculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +432,7 @@
 				F3E2388C1A060A6F0081668E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
