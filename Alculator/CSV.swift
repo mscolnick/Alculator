@@ -14,7 +14,7 @@ public class CSV {
     public let columns = Dictionary<String, [String]>()
     let delimiter = NSCharacterSet(charactersInString: ",")
     
-    public init?(contentsOfURL url: NSURL, delimiter: NSCharacterSet, error: NSErrorPointer) {
+    public init(contentsOfURL url: NSURL, delimiter: NSCharacterSet, error: NSErrorPointer) {
         let csvString = String(contentsOfURL: url, encoding: NSUTF8StringEncoding, error: error);
         if let csvStringToParse = csvString {
             self.delimiter = delimiter
@@ -26,10 +26,11 @@ public class CSV {
             self.headers = self.parseHeaders(fromLines: lines)
             self.rows = self.parseRows(fromLines: lines)
             self.columns = self.parseColumns(fromLines: lines)
+            
         }
     }
     
-    public convenience init?(contentsOfURL url: NSURL, error: NSErrorPointer) {
+    public convenience init(contentsOfURL url: NSURL, error: NSErrorPointer) {
         let comma = NSCharacterSet(charactersInString: ",")
         self.init(contentsOfURL: url, delimiter: comma, error: error)
     }
@@ -67,5 +68,9 @@ public class CSV {
         }
         
         return columns
+    }
+    
+    public func getRows () -> [Dictionary<String, String>] {
+        return self.rows
     }
 }

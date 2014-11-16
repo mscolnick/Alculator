@@ -14,7 +14,7 @@ class ModelViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet var brewTableView: UITableView!
     
-    var items: [String] = Array(manager.brewDict.keys)
+    var items: [Brew] = manager.brewArray
     var tempBrew:String = ""
     
     override func viewDidLoad() {
@@ -36,13 +36,14 @@ class ModelViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.brewTableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
         
-        cell.textLabel.text = self.items[indexPath.row]
+        cell.textLabel.text = self.items[indexPath.row].brewName
+        cell.detailTextLabel?.text = self.items[indexPath.row].brewery
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("You selected cell #\(indexPath.row)!")
-        self.tempBrew = items[indexPath.row]
+        self.tempBrew = self.items[indexPath.row].brewName
     }
     
     @IBAction func closeModal(sender: AnyObject) {
