@@ -18,6 +18,7 @@ struct Brew {
     var brewName = ""
     var location = ""
     var abv:Float = 0.0
+    var category = ""
 }
 
 class DataManager {
@@ -41,7 +42,7 @@ class DataManager {
             var beerABV:Float = row["ABV"]!.floatValue
             var location:String = row["Location"]!
             brewDict[beerName] = beerABV
-            brewArray.append(Brew(brewery: brewery, brewName: beerName, location: location, abv: beerABV))
+            brewArray.append(Brew(brewery: brewery, brewName: beerName, location: location, abv: beerABV, category: "Beer"))
         }
     
     }
