@@ -64,7 +64,8 @@ class ViewController: UIViewController {
             var ounces:Float = ouncesField.text.floatValue
             var beers:Float = beersField.text.floatValue
             var price:Float = pricesField.text.floatValue
-            totalBuzzLabel.text = NSString(format: "%.1f", manager.brewDict[brewLabel.text!]!*ounces*beers/price)
+            var abv:Float = manager.brewDict[brewLabel.text!]!
+            totalBuzzLabel.text = NSString(format: "%.1f", abv*ounces*beers/price)
         }
     }
 }

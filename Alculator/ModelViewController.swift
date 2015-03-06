@@ -51,8 +51,9 @@ class ModelViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         // Configure the cell
         cell.textLabel.text = brew.brewName
-        cell.detailTextLabel?.text = brew.brewery
-        
+        cell.detailTextLabel?.text = brew.brewery //doesnt show
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+
         return cell
     }
     
@@ -60,8 +61,8 @@ class ModelViewController: UIViewController, UITableViewDataSource, UITableViewD
         println("You selected cell #\(indexPath.row)!")
         self.tempBrew = self.items[indexPath.row].brewName
         self.performSegueWithIdentifier("brewDetail", sender: tableView)
-
     }
+    
     
     func filterContentForSearchText(searchText: String, scope: String = "All") {
         // Filter the array using the filter method
@@ -88,13 +89,15 @@ class ModelViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "brewDetail" {
-            let brewDetailViewController = segue.destinationViewController as UIViewController
+            let brewDetailViewController = segue.destinationViewController as DetailViewController
             if sender as UITableView == self.searchDisplayController!.searchResultsTableView {
                 let indexPath = self.searchDisplayController!.searchResultsTableView.indexPathForSelectedRow()!
+                brewDetailViewController.brewDetail = self.filteredBrews[indexPath.row]
                 let destinationTitle = self.filteredBrews[indexPath.row].brewName
                 brewDetailViewController.title = destinationTitle
             } else {
                 let indexPath = self.brewTableView.indexPathForSelectedRow()!
+                brewDetailViewController.brewDetail = self.items[indexPath.row]
                 let destinationTitle = self.items[indexPath.row].brewName
                 brewDetailViewController.title = destinationTitle
             }
